@@ -1,0 +1,21 @@
+sources:
+  gpu_operator_getting_started:
+    url: "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html"
+    outfile: "docs/vendor/gpu-operator-getting-started.md"
+    title: "NVIDIA GPU Operator - Getting Started"
+  gpu_operator_platform_support:
+    url: "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/platform-support.html"
+    outfile: "docs/vendor/gpu-operator-platform-support.md"
+    title: "NVIDIA GPU Operator - Platform Support"
+  gpu_operator_troubleshooting:
+    url: "https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/troubleshooting.html"
+    outfile: "docs/vendor/gpu-operator-troubleshooting.md"
+    title: "NVIDIA GPU Operator - Troubleshooting"
+  container_toolkit_install:
+    url: "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html"
+    outfile: "docs/vendor/container-toolkit-install.md"
+    title: "NVIDIA Container Toolkit - Install Guide"
+  cuda_install_linux:
+    url: "https://docs.nvidia.com/cuda/cuda-installation-guide-linux/"
+    outfile: "docs/vendor/cuda-install-linux.md"
+    title: "CUDA Installation Guide for Linux"
