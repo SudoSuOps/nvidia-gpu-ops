@@ -1,0 +1,8 @@
+- hosts: gpu_hosts
+  gather_facts: yes
+  become: true
+  roles:
+    - role: driver_setup
+    - role: cuda_toolkit
+    - role: container_runtime
+    - role: runtime_validation

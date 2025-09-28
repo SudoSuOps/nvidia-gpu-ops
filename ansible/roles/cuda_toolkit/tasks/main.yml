@@ -1,0 +1,14 @@
+---
+- name: Install CUDA toolkit packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ cuda_packages | default(['cuda-toolkit-12-4']) }}"
+  register: cuda_install
+
+- name: Set default CUDA symlinks
+  ansible.builtin.file:
+    src: /usr/local/cuda-12.4
+    dest: /usr/local/cuda
+    state: link
+  when: cuda_install is changed

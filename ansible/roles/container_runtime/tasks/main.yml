@@ -1,0 +1,15 @@
+---
+- name: Install container runtime deps
+  ansible.builtin.apt:
+    name:
+      - containerd
+      - nvidia-container-toolkit
+    state: present
+    update_cache: yes
+
+- name: Configure containerd for NVIDIA runtime
+  ansible.builtin.shell: |
+    nvidia-ctk runtime configure --runtime=containerd --set-as-default
+    systemctl restart containerd
+  args:
+    executable: /bin/bash

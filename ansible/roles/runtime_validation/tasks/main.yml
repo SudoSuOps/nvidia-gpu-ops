@@ -1,0 +1,10 @@
+---
+- name: Check NVIDIA SMI availability
+  ansible.builtin.command: nvidia-smi
+  register: smi_out
+  changed_when: false
+
+- name: Fail if no GPUs detected
+  ansible.builtin.fail:
+    msg: "No NVIDIA GPUs detected on {{ inventory_hostname }}"
+  when: "'No devices were found' in smi_out.stderr or smi_out.rc != 0"
