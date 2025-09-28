@@ -1,0 +1,11 @@
+# DCGM Exporter for Prometheus
+image:
+  repository: nvidia/dcgm-exporter
+  tag: 3.2.6-3.1.7-ubuntu22.04
+serviceMonitor:
+  enabled: true
+  labels:
+    release: prometheus
+resources:
+  limits:
+    nvidia.com/gpu: 1

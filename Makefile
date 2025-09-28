@@ -40,3 +40,10 @@ smoke:
 
 vendor-sync:
 	scripts/vendor-sync.sh
+
+dcgm-exporter:
+	helm repo add nvidia https://nvidia.github.io/dcgm-exporter || true
+	helm repo update
+	helm upgrade --install dcgm-exporter nvidia/dcgm-exporter \
+	  -n monitoring --create-namespace \
+	  -f kubernetes/values/dcgm-exporter.yaml

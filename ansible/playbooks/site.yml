@@ -2,6 +2,7 @@
   gather_facts: yes
   become: true
   roles:
+    - role: check_gpu
     - role: driver_setup
     - role: cuda_toolkit
     - role: container_runtime

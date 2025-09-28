@@ -1,0 +1,8 @@
+---
+- name: Fail if no NVIDIA GPU present
+  shell: |
+    set -o pipefail
+    lspci | grep -i nvidia
+  register: gpu_check
+  failed_when: gpu_check.rc != 0
+  changed_when: false
